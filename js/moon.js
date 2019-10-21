@@ -1,4 +1,4 @@
-export const moon = {
+const Moon = {
     // Original Snippet: https://gist.github.com/endel/dfe6bb2fbe679781948c
     phase: function (year, month, day) {
         var c = e = jd = b = 0;

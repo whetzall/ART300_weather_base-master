@@ -1,5 +1,5 @@
-.degree_symbol {
-    display: none;
+.degree_symbol:not(:empty)::after {
+    content: "°"
 }
 
 .owm-legend-item{
@@ -9,4 +9,34 @@
 #map {
 	width: 600px;
     height: 600px;
+}
+
+
+.alerts {
+    position: absolute;
+    background-color: #F5A039;
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 3em;
+}
+
+.two_sides {
+    display: grid;
+    grid-template-columns: 11.34fr 7.86fr;
+    grid-template-rows: 100vh;
+}
+
+.left{
+    background-color: #7EBFD9 ;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+
+
+
+.right{
+    background-color: #B6DAE8;
 }
