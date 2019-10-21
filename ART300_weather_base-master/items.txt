@@ -1,0 +1,53 @@
+Current
+--------------
+UV Index
+Wind Direction
+Wind Speed
+
+Temperature
+	Real
+	Feels like
+Alerts
+Description
+Dew Point
+Air Quality
+Cloud Coverage
+Geographic location 
+	Latitude Longitude
+	Name
+	ZIP code
+
+Humidity 
+Visibility
+High/Low
+Precipitation 
+	Rain
+	Snow
+	Likelihood 
+	Amount	
+
+Radar
+Pressure
+
+Time
+Date
+Sunrise / Sunset
+Phase of Moon / Tide
+
+
+Forecast
+---------------
+High / Low
+UV Index
+Alerts
+Description 
+Air Quality
+Cloud Coverage
+Humidity
+Precipitation 
+	Rain
+	Snow
+	Likelihood 
+
+Sunrise / Sunset	
+Phase of Moon / Tid

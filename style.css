@@ -1,0 +1,12 @@
+.degree_symbol {
+    display: none;
+}
+
+.owm-legend-item{
+    display: none;
+}
+
+#map {
+	width: 600px;
+    height: 600px;
+}
