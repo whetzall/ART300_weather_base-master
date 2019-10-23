@@ -34,7 +34,18 @@
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
+.one{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
+}
+
+.location_zip_date{
+    text-align: left;
+}
+.icon_lildescrip{
+    text-align: right;
+}
 
 
 .right{
