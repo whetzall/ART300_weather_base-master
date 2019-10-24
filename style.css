@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://use.typekit.net/pfn5fsp.css">
+
+
 .degree_symbol:not(:empty)::after {
     content: "°"
 }
@@ -13,13 +16,17 @@
 
 
 .alerts {
+    margin-top: 0vh;
     position: absolute;
     background-color: #F5A039;
     height: 10vh;
     width: 100vw;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
 }
+
+
+
 
 .two_sides {
     display: grid;
@@ -27,11 +34,18 @@
     grid-template-rows: 100vh;
 }
 
+
+
+
+
+
 .left{
+    margin-top: 10vh;
     background-color: #7EBFD9 ;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 200vh;
 }
 
 .one{
@@ -42,12 +56,174 @@
 
 .location_zip_date{
     text-align: left;
+
 }
+
+.location{
+    margin-top: -2vh;
+    margin-left: 3vw;
+    color: #0D3D68;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5em;
+    kerning: auto;
+}
+
+.zip{
+    color: #348ABF;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -5.3vh;
+    margin-left: 3.1vw;
+    font-size: 2em ;
+    kerning: auto;
+}
+
+.date{
+    color: #0D3D68;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 3vw;
+    margin-top: -1.7vw;
+    font-size: 2em;
+    kerning: auto;
+}
+
 .icon_lildescrip{
     text-align: right;
 }
 
+.lildescrip{
+    color: #0D3D68;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 3vw;
+    margin-top: 8.8vw;
+    font-size: 1.5em;
+    kerning: auto;
+}
+
+
+
+
+.two{
+    background-color: #FFD148;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    height: 36vh;
+    margin-top: -23vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.current-temp{
+    margin-top: -17vh;
+    margin-left: 5vw;
+    color: #3D3D3D;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 13em;
+    kerning: auto;
+    line-height: 0vh;
+}
+
+.high_low {
+    margin-top: -10vh;
+    margin-left: 4.5vw;
+    color: #3D3D3D;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    line-height: 0vh;
+}
+
+
+.right_temp{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.feels_like{
+    margin-top: 1vh;
+    margin-left: 4.5vw;
+    color: #3D3D3D;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    line-height: 0vh;
+}
+
+.humidity{
+    margin-top: 1vh;
+    margin-left: 4.5vw;
+    color: #3D3D3D;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    line-height: 0vh;
+}
+
+
+.three{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.precip{
+    margin-top: -80vh;
+    margin-left: 4.5vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
+}
+
+.precip_type{
+    margin-top: 1vh;
+    margin-left: 4.5vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 1.5em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
+}
+
+.precip_amount{
+    margin-top: 1vh;
+    margin-left: 4.5vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 1.5em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
+}
+
+.three_right{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+
 
 .right{
+    margin-top: 10vh;
     background-color: #B6DAE8;
 }
