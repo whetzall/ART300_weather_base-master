@@ -31,7 +31,7 @@
 .two_sides {
     display: grid;
     grid-template-columns: 11.34fr 7.86fr;
-    grid-template-rows: 100vh;
+
 }
 
 
@@ -40,18 +40,19 @@
 
 
 .left{
-    margin-top: 10vh;
+    margin-top: 5vh;
     background-color: #7EBFD9 ;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .05fr .5fr .3fr .5fr 1fr 1fr 1fr;
     height: 200vh;
 }
 
 .one{
+    margin-top: 6vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    height: vh;
 }
 
 .location_zip_date{
@@ -94,6 +95,7 @@
 
 .icon_lildescrip{
     text-align: right;
+    height: 10vh;
 }
 
 .lildescrip{
@@ -112,17 +114,18 @@
 
 .two{
     background-color: #FFD148;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin:auto;
     height: 36vh;
-    margin-top: -23vh;
+    width: 110vh;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .6fr 1fr;
+    
 }
 
 .current-temp{
     margin-top: -17vh;
-    margin-left: 5vw;
+    margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 700;
@@ -134,7 +137,7 @@
 
 .high_low {
     margin-top: -10vh;
-    margin-left: 4.5vw;
+    margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -151,8 +154,9 @@
 }
 
 .feels_like{
+    letter-spacing: .05em;
     margin-top: 1vh;
-    margin-left: 4.5vw;
+    margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -163,8 +167,9 @@
 }
 
 .humidity{
+    letter-spacing: .05em;
     margin-top: 1vh;
-    margin-left: 4.5vw;
+    margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -174,14 +179,33 @@
     line-height: 0vh;
 }
 
+.idk_man {
+    text-align: center;
+    margin-left: 9vw;
+    font-size: 3em;
+    margin-top: -3vh;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.line{
+    height: 5vh;
+}
 
 .three{
+    margin: auto;
+    background-color: #FFD148;
+    height: 20vh;
+    width: 110vh;
+    margin-top: 1vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .6fr 1fr;
 }
 
 .precip{
-    margin-top: -80vh;
+
     margin-left: 4.5vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -193,7 +217,7 @@
 }
 
 .precip_type{
-    margin-top: 1vh;
+    margin-top:5vh;
     margin-left: 4.5vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -205,7 +229,7 @@
 }
 
 .precip_amount{
-    margin-top: 1vh;
+    margin-top: 5vh;
     margin-left: 4.5vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -219,6 +243,42 @@
 .three_right{
     display: grid;
     grid-template-rows: 1fr 1fr;
+}
+
+.visibility{
+    margin-left: 4.5vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
+}
+
+.wind{
+    display: grid;
+    grid-template-columns: .5fr 6fr;
+    margin-left: 4.5vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
+}
+
+.wind_info{
+    margin-left: 1vw;
+    margin-top: 5vh;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: .4em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
 }
 
 
