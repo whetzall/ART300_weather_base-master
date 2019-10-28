@@ -10,11 +10,13 @@
         <link rel="stylesheet" href="/js/libraries/leaflet/leaflet.css" />
         <link rel="stylesheet" href="/js/libraries/leaflet/leaflet-openweathermap.css" />
         <link rel="stylesheet" href="/js/libraries/leaflet/leaflet-languageselector.css" />
+        
+        <script src="/js/libraries/vue.min.js"></script>
+        <script src="keys.js"></script>
+        <script src="/js/moon.js"></script>
 
         <link rel="stylesheet" href="https://use.typekit.net/pfn5fsp.css">
-        <style>
-            @import url("https://use.typekit.net/pfn5fsp.css");
-          </style>
+        
 
         <script src="/js/libraries/leaflet/leaflet.js"></script>
         <script src="/js/libraries/leaflet/Permalink.js"></script>
@@ -28,326 +30,328 @@
     </head>
 
     <body>
+        <div class="results" id="app">
 
-        <input placeholder="Enter Your ZIP Code" name="name" id="zip" />
-        <p id="zip_display"></p>
+            <input placeholder="Enter Your ZIP Code" v-on:input="zip_trigger" name="name" id="zip" />
+            <p id="zip_display"></p>
 
 
-        <div class="alerts">
-            <p>ALERTS</p>
-        </div>
-        <div class="two_sides">
-            <div class="left">
+            <div class="alerts">
+                <p>ALERTS</p>
+            </div>
+            
+            <div class="two_sides">
+                <div class="left">
 
-                <div class="one">
-                    <div class="location_zip_date">
-                        <div class="location">
-                            <p>Location:</p>
-                        </div>
-                        <div class="zip">
-                            <p>Zip Code:</p>
-                        </div>
-                        <div class="date">
-                            <p>10/77/19</p>
-                        </div>
-                    </div>
-                    <div class="icon_lildescrip">
-                        <div class="icon"></div>
-                        <div class="lildescrip">
-                            <p>a little rainy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="two">
-                    <div class="temp_left">
-                            <div class="current-temp">
-                                <p>99°</p>
+                    <div class="one">
+                        <div class="location_zip_date">
+                            <div class="location">
+                                <p>{{location.name}}</p>
                             </div>
-                            <div class="high_low">
-                            <p>high 110° / low 20°</p>
+                            <div class="zip">
+                                <p>Zip Code: {{location.zip}}</p>
                             </div>
-                    </div>
-                    <div class="right_temp"> 
-                        <div class="feels_like">
-                            <p>Feels like:</p>
-                            <p class="idk_man">23°</p>
-                        </div>
-                        <div class="humidity">
-                            <p>Humidity:</p>
-                            <p class="idk_man">23%</p>
-                        </div>
-                    </div>
-                </div>
+                            <div class="date">
+                                <p>{{time.date}}</p>
+                                <p class="date_specific">{{time.day}} {{time.hour_12}} : {{time.minute}} : {{time.seconds}} {{time.ampm}}</p>
 
-                <div class="line"></div>
-
-                <div class="three">
-                    <div class="three_left">
-                        <div class="precip">
-                            <p>Precipitation:</p>
+                            </div>
                         </div>
-                        <div class="precip_type">
-                            <p>Type</p>
-                        </div>
-                        <div class="precip_amount">
-                            <p>Amount</p>
+                        <div class="icon_lildescrip">
+                            <div class="icon"></div>
+                            <div class="lildescrip">
+                                <p>{{current.description_main}}</p>
+                               
+                            </div>
                         </div>
                     </div>
-                    <div class="three_right">
-                        <div class="visibility">
-                            <p>Visibility:High</p>
-                        </div>
-                        <div class="wind">
-                            <p>Wind:</p>
-                            <p class="wind_info">Light breeze, 1.9 m/s,
-                                East-southeast ( 111.337 )
-                            </p>
-                        </div>
-                    </div>
-                </div>
-          
-                <div class="long description"></div>
-                <div class="radar"></div>
 
-                <div class="four">
-                    <div class="four_left">
-                        <div class="four_left_top">
-                            <div class="sunrise"></div>
-                            <div class="sunset"></div>
+                    <div class="two">
+                        <div class="temp_left">
+                                <div class="current-temp">
+                                    <p>{{current.temp.current}}°</p>
+                                </div>
+                               
+                                <div class="high_low_grid">
+                                <p class="high_high">high {{current.temp.high}}° /</p>
+                                <p class="low_low"> low {{current.temp.low}}°</p>
+                                </div>
                         </div>
-                        <div class="four_left_bottom">
-                            <div class="moonphase"></div>
-                            <div class="phase"></div>
+                        <div class="right_temp"> 
+                            <div class="feels_like">
+                                <p>Feels like:</p>
+                                <p class="idk_man">23°</p>
+                            </div>
+                            <div class="humidity">
+                                <p>Humidity:</p>
+                                <p class="idk_man">23%</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="line"></div>
 
-                    <div class="four_right">
-                        <div class="table">
-                            <div class="table_left">
-                                <div class="dp"></div>
-                                <div class="cc"></div>
-                                <div class="aq"></div>
-                                <div class="uv_"></div>
-                                <div class="press"></div>
+                    <div class="three">
+                        <div class="three_left">
+                            <div class="precip">
+                                <p>Precipitation:</p>
                             </div>
-                        <div class="vertical_line"></div>
-                            <div class="table_right">
-                                <div class="table_right_num"></div>
-                                <div class="table_right_num"></div>
-                                <div class="table_right_num"></div>
-                                <div class="table_right_num"></div>
-                                <div class="table_right_num"></div>
+                            <div class="precip_type">
+                                <p>Rain: {{current.rain}}</p>
+                                <p>{{current.snow}}</p>
                             </div>
-
+                            <div class="precip_amount">
+                                <p>Amount</p>
+                            </div>
+                        </div>
+                        <div class="three_right">
+                            <div class="visibility">
+                                <p>Visibility:High</p>
+                            </div>
+                            <div class="wind">
+                                <p>Wind:</p>
+                                <p class="wind_info">Light breeze, 1.9 m/s,
+                                    East-southeast ( 111.337 )
+                                </p>
+                            </div>
                         </div>
                     </div>
+            
+                    <div class="long description"></div>
+                    <div class="radar"></div>
+
+                    <div class="four">
+                        <div class="four_left">
+                            <div class="four_left_top">
+                                <div class="sunrise"></div>
+                                <div class="sunset"></div>
+                            </div>
+                            <div class="four_left_bottom">
+                                <div class="moonphase"></div>
+                                <div class="phase"></div>
+                            </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="four_right">
+                            <div class="table">
+                                <div class="table_left">
+                                    <div class="dp"></div>
+                                    <div class="cc"></div>
+                                    <div class="aq"></div>
+                                    <div class="uv_"></div>
+                                    <div class="press"></div>
+                                </div>
+                            <div class="vertical_line"></div>
+                                <div class="table_right">
+                                    <div class="table_right_num"></div>
+                                    <div class="table_right_num"></div>
+                                    <div class="table_right_num"></div>
+                                    <div class="table_right_num"></div>
+                                    <div class="table_right_num"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+
+                    <div class="forecast_one">
+                        <div class="forecast_chart">
+                            <div class="fore_one_left">
+                                <div class="fore_date"></div>
+                                <div class="fore_alerts"></div>
+                                <div class="fore_precip"></div>
+                                <div class="fore_cc"></div>
+                                <div class="fore_bigdescrip"></div>
+                            </div>
+                            <div class="fore_one_right">
+                                <div class="fore_one_high/low"></div>
+                                <div class="fore_one_humidity"></div>
+                                <div class="fore_one_uv"></div>
+                                <div class="fore_one_aq"></div>
+                                <div class="fore_one_sunrise"></div>
+                                <div class="fore_one_humidity"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast_two">
+                        <div class="forecast_chart">
+                            <div class="fore_two_left">
+                                <div class="fore_date"></div>
+                                <div class="fore_alerts"></div>
+                                <div class="fore_precip"></div>
+                                <div class="fore_cc"></div>
+                                <div class="fore_bigdescrip"></div>
+                            </div>
+                            <div class="fore_two_right">
+                                <div class="fore_two_high/low"></div>
+                                <div class="fore_two_humidity"></div>
+                                <div class="fore_two_uv"></div>
+                                <div class="fore_two_aq"></div>
+                                <div class="fore_two_sunrise"></div>
+                                <div class="fore_two_humidity"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast_three">
+                        <div class="forecast_chart">
+                            <div class="fore_three_left">
+                                <div class="fore_date"></div>
+                                <div class="fore_alerts"></div>
+                                <div class="fore_precip"></div>
+                                <div class="fore_cc"></div>
+                                <div class="fore_bigdescrip"></div>
+                            </div>
+                            <div class="fore_three_right">
+                                <div class="fore_three_high/low"></div>
+                                <div class="fore_three_humidity"></div>
+                                <div class="fore_three_uv"></div>
+                                <div class="fore_three_aq"></div>
+                                <div class="fore_three_sunrise"></div>
+                                <div class="fore_three_humidity"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast_four">
+                        <div class="forecast_chart">
+                            <div class="fore_four_left">
+                                <div class="fore_date"></div>
+                                <div class="fore_alerts"></div>
+                                <div class="fore_precip"></div>
+                                <div class="fore_cc"></div>
+                                <div class="fore_bigdescrip"></div>
+                            </div>
+                            <div class="fore_four_right">
+                                <div class="fore_four_high/low"></div>
+                                <div class="fore_four_humidity"></div>
+                                <div class="fore_four_uv"></div>
+                                <div class="fore_four_aq"></div>
+                                <div class="fore_four_sunrise"></div>
+                                <div class="fore_four_humidity"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast_five">
+                        <div class="forecast_chart">
+                            <div class="fore_five_left">
+                                <div class="fore_date"></div>
+                                <div class="fore_alerts"></div>
+                                <div class="fore_precip"></div>
+                                <div class="fore_cc"></div>
+                                <div class="fore_bigdescrip"></div>
+                            </div>
+                            <div class="fore_five_right">
+                                <div class="fore_five_high/low"></div>
+                                <div class="fore_five_humidity"></div>
+                                <div class="fore_five_uv"></div>
+                                <div class="fore_five_aq"></div>
+                                <div class="fore_five_sunrise"></div>
+                                <div class="fore_five_humidity"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="forecast_six">
+                        <div class="forecast_chart">
+                            <div class="fore_six_left">
+                                <div class="fore_date"></div>
+                                <div class="fore_alerts"></div>
+                                <div class="fore_precip"></div>
+                                <div class="fore_cc"></div>
+                                <div class="fore_bigdescrip"></div>
+                            </div>
+                            <div class="fore_six_right">
+                                <div class="fore_six_high/low"></div>
+                                <div class="fore_six_humidity"></div>
+                                <div class="fore_six_uv"></div>
+                                <div class="fore_six_aq"></div>
+                                <div class="fore_six_sunrise"></div>
+                                <div class="fore_six_humidity"></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="right">
-
-                <div class="forecast_one">
-                    <div class="forecast_chart">
-                        <div class="fore_one_left">
-                            <div class="fore_date"></div>
-                            <div class="fore_alerts"></div>
-                            <div class="fore_precip"></div>
-                            <div class="fore_cc"></div>
-                            <div class="fore_bigdescrip"></div>
-                        </div>
-                        <div class="fore_one_right">
-                            <div class="fore_one_high/low"></div>
-                            <div class="fore_one_humidity"></div>
-                            <div class="fore_one_uv"></div>
-                            <div class="fore_one_aq"></div>
-                            <div class="fore_one_sunrise"></div>
-                            <div class="fore_one_humidity"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast_two">
-                    <div class="forecast_chart">
-                        <div class="fore_two_left">
-                            <div class="fore_date"></div>
-                            <div class="fore_alerts"></div>
-                            <div class="fore_precip"></div>
-                            <div class="fore_cc"></div>
-                            <div class="fore_bigdescrip"></div>
-                        </div>
-                        <div class="fore_two_right">
-                            <div class="fore_two_high/low"></div>
-                            <div class="fore_two_humidity"></div>
-                            <div class="fore_two_uv"></div>
-                            <div class="fore_two_aq"></div>
-                            <div class="fore_two_sunrise"></div>
-                            <div class="fore_two_humidity"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast_three">
-                    <div class="forecast_chart">
-                        <div class="fore_three_left">
-                            <div class="fore_date"></div>
-                            <div class="fore_alerts"></div>
-                            <div class="fore_precip"></div>
-                            <div class="fore_cc"></div>
-                            <div class="fore_bigdescrip"></div>
-                        </div>
-                        <div class="fore_three_right">
-                            <div class="fore_three_high/low"></div>
-                            <div class="fore_three_humidity"></div>
-                            <div class="fore_three_uv"></div>
-                            <div class="fore_three_aq"></div>
-                            <div class="fore_three_sunrise"></div>
-                            <div class="fore_three_humidity"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast_four">
-                    <div class="forecast_chart">
-                        <div class="fore_four_left">
-                            <div class="fore_date"></div>
-                            <div class="fore_alerts"></div>
-                            <div class="fore_precip"></div>
-                            <div class="fore_cc"></div>
-                            <div class="fore_bigdescrip"></div>
-                        </div>
-                        <div class="fore_four_right">
-                            <div class="fore_four_high/low"></div>
-                            <div class="fore_four_humidity"></div>
-                            <div class="fore_four_uv"></div>
-                            <div class="fore_four_aq"></div>
-                            <div class="fore_four_sunrise"></div>
-                            <div class="fore_four_humidity"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast_five">
-                    <div class="forecast_chart">
-                        <div class="fore_five_left">
-                            <div class="fore_date"></div>
-                            <div class="fore_alerts"></div>
-                            <div class="fore_precip"></div>
-                            <div class="fore_cc"></div>
-                            <div class="fore_bigdescrip"></div>
-                        </div>
-                        <div class="fore_five_right">
-                            <div class="fore_five_high/low"></div>
-                            <div class="fore_five_humidity"></div>
-                            <div class="fore_five_uv"></div>
-                            <div class="fore_five_aq"></div>
-                            <div class="fore_five_sunrise"></div>
-                            <div class="fore_five_humidity"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="forecast_six">
-                    <div class="forecast_chart">
-                        <div class="fore_six_left">
-                            <div class="fore_date"></div>
-                            <div class="fore_alerts"></div>
-                            <div class="fore_precip"></div>
-                            <div class="fore_cc"></div>
-                            <div class="fore_bigdescrip"></div>
-                        </div>
-                        <div class="fore_six_right">
-                            <div class="fore_six_high/low"></div>
-                            <div class="fore_six_humidity"></div>
-                            <div class="fore_six_uv"></div>
-                            <div class="fore_six_aq"></div>
-                            <div class="fore_six_sunrise"></div>
-                            <div class="fore_six_humidity"></div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
 
 
-        <div class="results" id="app">
+        
+<!--
+
+            <h1>TIME</h1>
+                <p>{{time.moom}}</p>
+
+                <h1>META</h1>
+                
+
+                <p>{{location.coord.lat}}</p>
+                <p>{{location.coord.lon}}</p>
+
+                <p>{{error}}</p>
 
 
-            <!-- <h1>TIME</h1>
-            <p>{{time.day}}</p>
-            <p>{{time.date}}</p>
-            <p>{{time.hour_12}} : {{time.minute}} : {{time.seconds}} {{time.ampm}}</p>
-            <p>{{time.moom}}</p>
+                <h1>CURRENT</h1>
+                <p>{{current.description_main}}</p>
+                <p>{{current.description_long}}</p>
+                <p>{{current.description_icon}}</p>
 
-            <h1>META</h1>
-            <p>{{city}}</p>
+                <p>{{current.wind.speed}}</p>
+                <p class="degree_symbol">{{current.wind.degree}}</p>
+                <p>{{current.cloud_cover}}</p>
 
-            <p>{{location.zip}}</p>
-            <p>{{location.coord.lat}}</p>
-            <p>{{location.coord.lon}}</p>
-            <p>{{location.name}}</p>
+                <p>{{current.rain}}</p>
+                <p>{{current.snow}}</p>
 
-            <p>{{error}}</p>
-
-
-            <h1>CURRENT</h1>
-            <p>{{current.description_main}}</p>
-            <p>{{current.description_long}}</p>
-            <p>{{current.description_icon}}</p>
-
-            <p class="degree_symbol">{{current.temp.current}}</p>
-            <p class="degree_symbol">{{current.temp.high}}</p>
-            <p class="degree_symbol">{{current.temp.low}}</p>
-
-            <p>{{current.wind.speed}}</p>
-            <p class="degree_symbol">{{current.wind.degree}}</p>
-            <p>{{current.cloud_cover}}</p>
-
-            <p>{{current.rain}}</p>
-            <p>{{current.snow}}</p>
-
-            <p>{{current.sunrise}}</p>
-            <p>{{current.sunset}}</p>
+                <p>{{current.sunrise}}</p>
+                <p>{{current.sunset}}</p>
 
 
-            <h1>HOURLY</h1>
-            <h4>Hour 1</h4>
-            <p>{{hourly[0].isDaytime ? 'Day' : 'Night' }}</p>
-            <p>{{hourly[0].number}}</p>
-            <p>{{hourly[0].shortForecast}}</p>
-            <p>{{hourly[0].startTime}}</p>
-            <p class="degree_symbol">{{hourly[0].temperature}}</p>
-            <p>{{hourly[0].emperatureTrend}}</p>
-            <p>{{hourly[0].windSpeed}}</p>
-            <p>{{hourly[0].windDirection}}</p>
+                <h1>HOURLY</h1>
+                <h4>Hour 1</h4>
+                <p>{{hourly[0].isDaytime ? 'Day' : 'Night' }}</p>
+                <p>{{hourly[0].number}}</p>
+                <p>{{hourly[0].shortForecast}}</p>
+                <p>{{hourly[0].startTime}}</p>
+                <p class="degree_symbol">{{hourly[0].temperature}}</p>
+                <p>{{hourly[0].emperatureTrend}}</p>
+                <p>{{hourly[0].windSpeed}}</p>
+                <p>{{hourly[0].windDirection}}</p>
 
-            <h1>FORECAST</h1>
-            <h4>Day 1</h4>
-            <p  class="degree_symbol">High - {{forecast[0].max_temp}}</p>
-            <p  class="degree_symbol">Low - {{forecast[0].min_temp}}</p>
-            <p>{{forecast[0].uv}}</p>
-            <p>{{forecast[0].weather.description}}</p>
+                <h1>FORECAST</h1>
+                <h4>Day 1</h4>
+                <p  class="degree_symbol">High - {{forecast[0].max_temp}}</p>
+                <p  class="degree_symbol">Low - {{forecast[0].min_temp}}</p>
+                <p>{{forecast[0].uv}}</p>
+                <p>{{forecast[0].weather.description}}</p>
 
-            <p>{{forecast[0].wind_spd}} mph</p>
-            <p>{{forecast[0].wind_cdir_full}}</p>
-            <p>{{forecast[0].wind_cdir}}</p>
+                <p>{{forecast[0].wind_spd}} mph</p>
+                <p>{{forecast[0].wind_cdir_full}}</p>
+                <p>{{forecast[0].wind_cdir}}</p>
 
-            <p>{{forecast[0].vis}}</p>
+                <p>{{forecast[0].vis}}</p>
 
-            <p>{{forecast[0].pop}}</p>
+                <p>{{forecast[0].pop}}</p>
 
-            <p>{{forecast[0].precip}}</p>
+                <p>{{forecast[0].precip}}</p>
 
-            <p>{{forecast[0].snow}}</p>
+                <p>{{forecast[0].snow}}</p>
 
-            <p>{{forecast[0].dewpt}}</p>
-            <p>{{forecast[0].pres}} mb</p> -->
-        </div>
-        <div id="map"></div>
+                <p>{{forecast[0].dewpt}}</p>
+                <p>{{forecast[0].pres}} mb</p> 
+-->
+        
+            <div id="map"></div>
+
+            <script src="/js/script.js"></script>
+    </div>
 
 
-        <script src="/js/script.js" type="module"></script>
     </body>
 </html>

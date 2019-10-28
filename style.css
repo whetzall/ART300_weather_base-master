@@ -16,13 +16,16 @@
 
 
 .alerts {
-    margin-top: 0vh;
+    margin-top: -2vh;
     position: absolute;
     background-color: #F5A039;
-    height: 10vh;
+    height: 11vh;
     width: 100vw;
     text-align: center;
     font-size: 2em;
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 
@@ -44,7 +47,7 @@
     background-color: #7EBFD9 ;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .05fr .5fr .3fr .5fr 1fr 1fr 1fr;
+    grid-template-rows: .05fr .5fr .2fr .3fr 1fr 1fr 1fr;
     height: 200vh;
 }
 
@@ -61,13 +64,13 @@
 }
 
 .location{
-    margin-top: -2vh;
-    margin-left: 3vw;
+    margin-top: -6vh;
+    margin-left: 5vw;
     color: #0D3D68;
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2.5em;
+    font-size: 2.7em;
     kerning: auto;
 }
 
@@ -76,8 +79,8 @@
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin-top: -5.3vh;
-    margin-left: 3.1vw;
+    margin-top: -6.5vh;
+    margin-left: 5.1vw;
     font-size: 2em ;
     kerning: auto;
 }
@@ -87,7 +90,7 @@
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin-left: 3vw;
+    margin-left: 5vw;
     margin-top: -1.7vw;
     font-size: 2em;
     kerning: auto;
@@ -99,33 +102,37 @@
 }
 
 .lildescrip{
+    display: grid;
     color: #0D3D68;
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 400;
     font-style: normal;
-    margin-right: 3vw;
-    margin-top: 8.8vw;
+    margin-right: 5vw;
+    margin-top: 8.3vw;
     font-size: 1.5em;
     kerning: auto;
 }
 
+.date_specific{
+    margin-top: -4vh;
+    font-size: .8em;
+}
 
 
 
 .two{
     background-color: #FFD148;
     margin:auto;
-    height: 36vh;
+    height: 38vh;
     width: 110vh;
-
     display: grid;
-    grid-template-columns: .6fr 1fr;
+    grid-template-columns: .5fr 1fr;
     
 }
 
 .current-temp{
-    margin-top: -17vh;
-    margin-left: 4vw;
+    margin-top: -17.3vh;
+    margin-left: 3vw;
     color: #3D3D3D;
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 700;
@@ -133,19 +140,37 @@
     font-size: 13em;
     kerning: auto;
     line-height: 0vh;
+    z-index: 60;
+    text-align: center;
 }
 
-.high_low {
-    margin-top: -10vh;
-    margin-left: 4vw;
+.high_low_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -16vh;
+    margin-left: 0vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
-    font-size: 2em;
+    font-size: 1.5em;
     kerning:auto;
     line-height: 0vh;
+    text-align: center;
 }
+
+
+.high_high{
+    text-align: right;
+}
+
+.low_low{
+    margin-left: .7vw;
+    text-align: left;
+}
+
+
+
 
 
 .right_temp{
@@ -155,7 +180,7 @@
 
 .feels_like{
     letter-spacing: .05em;
-    margin-top: 1vh;
+    margin-top: 0vh;
     margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
@@ -168,7 +193,7 @@
 
 .humidity{
     letter-spacing: .05em;
-    margin-top: 1vh;
+    margin-top: -7vh;
     margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
@@ -176,14 +201,14 @@
     font-style: normal;    
     font-size: 2em;
     kerning:auto;
-    line-height: 0vh;
+    line-height: 1vh;
 }
 
 .idk_man {
     text-align: center;
     margin-left: 9vw;
     font-size: 3em;
-    margin-top: -3vh;
+    margin-top: 0vh;
     font-family: trade-gothic-next-condensed, sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -191,12 +216,18 @@
 
 
 .line{
-    height: 5vh;
+    margin: auto;
+    margin-top: 4vh;
+    height: .3vh;
+   width: 40vw;
+   background-color: white;
 }
+
+
+
 
 .three{
     margin: auto;
-    background-color: #FFD148;
     height: 20vh;
     width: 110vh;
     margin-top: 1vh;
@@ -205,8 +236,8 @@
 }
 
 .precip{
-
-    margin-left: 4.5vw;
+    margin-top: -3vh;
+    margin-left: 2vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
@@ -218,7 +249,7 @@
 
 .precip_type{
     margin-top:5vh;
-    margin-left: 4.5vw;
+    margin-left: 2vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
@@ -230,7 +261,7 @@
 
 .precip_amount{
     margin-top: 5vh;
-    margin-left: 4.5vw;
+    margin-left:2vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
@@ -246,6 +277,7 @@
 }
 
 .visibility{
+    margin-top: -3vh;
     margin-left: 4.5vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
@@ -257,6 +289,7 @@
 }
 
 .wind{
+    margin-top: -1.5vw;
     display: grid;
     grid-template-columns: .5fr 6fr;
     margin-left: 4.5vw;
