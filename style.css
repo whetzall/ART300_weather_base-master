@@ -47,8 +47,8 @@
     background-color: #7EBFD9 ;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .05fr .5fr .2fr .3fr 1fr 1fr 1fr;
-    height: 200vh;
+    grid-template-rows: .05fr .5fr .1fr .2fr .1fr .3fr 1fr;
+    height: 250vh;
 }
 
 .one{
@@ -131,7 +131,7 @@
 }
 
 .current-temp{
-    margin-top: -17.3vh;
+    margin-top: -15vh;
     margin-left: 3vw;
     color: #3D3D3D;
     font-family: trade-gothic-next-condensed, sans-serif;
@@ -147,7 +147,7 @@
 .high_low_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: -16vh;
+    margin-top: -15vh;
     margin-left: 0vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
@@ -180,7 +180,7 @@
 
 .feels_like{
     letter-spacing: .05em;
-    margin-top: 0vh;
+    margin-top: 1vh;
     margin-left: 4vw;
     color: #3D3D3D;
     font-family: trade-gothic-next, sans-serif;
@@ -217,8 +217,8 @@
 
 .line{
     margin: auto;
-    margin-top: 4vh;
-    height: .3vh;
+    margin-top: 3.5vh;
+    height: .2vh;
    width: 40vw;
    background-color: white;
 }
@@ -227,9 +227,9 @@
 
 
 .three{
-    margin: auto;
+    margin-left: auto;
     height: 20vh;
-    width: 110vh;
+    width: 100vh;
     margin-top: 1vh;
     display: grid;
     grid-template-columns: .6fr 1fr;
@@ -273,16 +273,17 @@
 
 .three_right{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .visibility{
-    margin-top: -3vh;
+    margin-top: -1.5vh;
     margin-left: 4.5vw;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
-    font-size: 2em;
+    font-size: 1.2em;
     kerning:auto;
     line-height: 0vh;
     color: #3A6992;
@@ -296,19 +297,19 @@
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
-    font-size: 2em;
+    font-size: 1.2em;
     kerning:auto;
     line-height: 0vh;
     color: #3A6992;
 }
 
 .wind_info{
-    margin-left: 1vw;
-    margin-top: 5vh;
+    margin-left: 0.2vw;
+    margin-top: 3vh;
     font-family: trade-gothic-next, sans-serif;
     font-weight: 300;
     font-style: normal;    
-    font-size: .4em;
+    font-size: .5em;
     kerning:auto;
     line-height: 0vh;
     color: #3A6992;
@@ -316,8 +317,248 @@
 }
 
 
+.coordinates{
+    margin-top: -2.3vw;
+    margin-left: 4.6vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 1.2em;
+    kerning:auto;
+    line-height: 0vh;
+    color: #3A6992;
+}
+
+.long_description{
+    margin-top: -6vh;
+    margin-left: 0vw;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 2em;
+    kerning:auto;
+    text-align: center;
+    color: #3A6992;
+}
+
+.radar{
+    margin: auto;
+
+}
+
+.four{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.four_left{
+    grid-template-columns: 1fr 1fr;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal; 
+
+}
+
+.sunrise{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 15vw;
+    margin-top: 8vh;
+    margin-left: 10vw;
+    color: #FFD148;
+    font-size: 2em;
+    text-align: left;
+}
+
+.sunny{
+    margin-top: 3vh;
+    margin-left: 1vh;
+    color: #3A6992;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+.sunset{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 15vw;
+    margin-top: -7vh;
+    margin-left: 10vw;
+    color: black;
+    font-size: 2em;
+    text-align: left;
+}
+
+.set{
+    margin-left: .8vw;
+}
+
+.setty{
+    margin-top: 3vh;
+    margin-left: 0vh;
+    color: #3A6992;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+.line:nth-of-type(2){
+    width: 12vw;
+    margin-left: 12vw;
+    margin-top: -2vh;
+}
+
+.four_left_bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 15vw;
+    margin-top: 2vh;
+    margin-left: 12vw;
+    color: white;
+    font-size: 2em;
+    text-align: left;
+}
+
+.phase{
+    color: black;
+    font-size: .7em;
+    text-align: left;
+}
+
+.four_right{
+
+    margin-top: 12vh;
+    margin-left: 1vw;
+    background-color: #F5A039;
+    width: 17vw;
+    height: 37vh;
+}
+
+.table{
+    display: grid;
+    grid-template-columns: 1fr .1fr 1fr;
+}
+
+.table_left{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+    text-align: right;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal; 
+}
+
+.vertical_line{
+    margin-left: 1vw;
+    margin-top: 2vh;
+    border-left: .1vw solid white;
+    height: 34vh;
+}
+
+.table_right{
+    margin-left: 1vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    color: #3A6992;
+    text-align: left;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal; 
+}
+
+
 
 .right{
-    margin-top: 10vh;
+    margin-top: 9vh;
     background-color: #B6DAE8;
+}
+
+.hourly{
+
+}
+
+
+.forecast_chart{
+    display: grid;
+
+    grid-template-columns: 2fr .1fr 1fr;
+}
+.fore_date{
+    text-align: left;
+    margin-left: 1vw;
+    color: #3D3D3D;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 1em;
+}
+
+.fore_one_left{
+    text-align: right;
+    margin-right: .1vw;
+    color: #3D3D3D;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 1em;
+    margin-left: 1vw;
+}
+
+.forecast_one_left{
+    color: #7EBFD9;
+    font-size: 2em;
+    line-height: .5vh;
+}
+
+.fore_precip{
+    color: #7EBFD9;
+    font-size: 1.3em;
+    line-height: .5vh;
+}
+
+
+.fore_cc{
+    color: #7EBFD9;
+}
+
+.fore_bigdescrip{
+    color: #7EBFD9;
+}
+
+.fore_wind{
+    color: #7EBFD9;       
+}
+
+
+
+.fore_one_right{
+    margin-top: 4.4vh;
+    margin-right: 2vw;
+    color: #7EBFD9;
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 300;
+    font-style: normal;    
+    font-size: 1em;
+    margin-left: 1vw;
+}
+
+.vertical_line2{
+    margin-left: 1vw;
+    margin-top: 8vh;
+    border-left: .1vw solid white;
+    height: 35vh;
+}
+
+.fore_one_high_low{
+    margin-top: 5vh;
+    color: white;
+    font-size: 1.5em;
+}
+
+.fore_one_humidity{
+    margin-top: -2vh;
+}
+
+.forecast_two{
+    margin-top: 5vh;
 }
